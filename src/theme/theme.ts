@@ -39,3 +39,5 @@ export const theme = createTheme({
   spacing: {},
   borderRadii: {},
 });
+
+export type Theme = typeof theme;
