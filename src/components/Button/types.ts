@@ -5,8 +5,16 @@ import {
   SpacingProps,
   SpacingShorthandProps,
 } from '@shopify/restyle';
-import {Theme} from '../../theme';
+import {Theme, ThemeColors} from '../../theme';
 import {TouchableOpacityProps} from 'react-native';
+import {TouchableOpacityBoxProps} from '../Box/types';
+
+export interface ButtonUI {
+  container: TouchableOpacityBoxProps;
+  content: ThemeColors;
+}
+
+export type ButtonPreset = 'primary' | 'outline' | 'secondary';
 
 export type ButtonProps = BackgroundColorProps<Theme> &
   SpacingProps<Theme> &
@@ -16,4 +24,5 @@ export type ButtonProps = BackgroundColorProps<Theme> &
   TouchableOpacityProps & {
     title: string;
     loading?: boolean;
+    preset?: ButtonPreset;
   };
