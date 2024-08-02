@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text as RNText} from 'react-native';
-import {$fontSizes, TextProps} from '../../theme';
+import {$fontSizes, TextProps} from './types';
 
 export const Text = ({
   children,

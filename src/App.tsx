@@ -1,19 +1,18 @@
 import React from 'react';
-import {Text} from './components/Text';
-import {SafeAreaView, View} from 'react-native';
+
+import {SafeAreaView} from 'react-native';
 import {ThemeProvider} from '@shopify/restyle';
 import {theme} from './theme';
-import {Button} from './components/Button';
+import {Button, Text, Box} from './components';
 
 export function App(): React.JSX.Element {
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView>
-        <View>
+      <SafeAreaView style={{flex: 1}}>
+        <Box backgroundColor="grayWhite" paddingTop="s20">
           <Text preset="headingMedium">Hello PORRA</Text>
-
           <Button title="Press me" marginBottom="s12" />
-        </View>
+        </Box>
       </SafeAreaView>
     </ThemeProvider>
   );
