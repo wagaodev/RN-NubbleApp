@@ -1,6 +1,8 @@
 import React from 'react';
-import {Text as RNText} from 'react-native';
-import {$fontSizes, TextProps} from './types';
+import {$fontSizes, TextProps, Theme} from './types';
+import {createText} from '@shopify/restyle';
+
+const SFText = createText<Theme>();
 
 export const Text = ({
   children,
@@ -8,7 +10,7 @@ export const Text = ({
   style,
   ...rest
 }: TextProps) => (
-  <RNText style={[$fontSizes[preset], style]} {...rest}>
+  <SFText style={[$fontSizes[preset], style]} {...rest}>
     {children}
-  </RNText>
+  </SFText>
 );
