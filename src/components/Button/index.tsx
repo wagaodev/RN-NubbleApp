@@ -19,9 +19,7 @@ export const Button = ({title, loading, ...rest}: ButtonProps) => (
     {loading ? (
       <ActivityIndicator />
     ) : (
-      <Text preset="paragraphCaption" style={{color: '#ffff'}}>
-        {title}
-      </Text>
+      <Text preset="paragraphMedium">{title}</Text>
     )}
   </S.Touchable>
 );

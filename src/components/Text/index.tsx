@@ -1,16 +1,25 @@
 import React from 'react';
-import {$fontSizes, TextProps, Theme} from './types';
+import {$fontSizes, getFontFamily, TextProps, Theme} from './types';
 import {createText} from '@shopify/restyle';
 
-const SFText = createText<Theme>();
+export const SRText = createText<Theme>();
 
 export const Text = ({
   children,
-  preset = 'headingMedium',
+  preset = 'paragraphMedium',
+  bold,
+  semiBold,
+  italic,
   style,
   ...rest
-}: TextProps) => (
-  <SFText style={[$fontSizes[preset], style]} {...rest}>
-    {children}
-  </SFText>
-);
+}: TextProps) => {
+  const fontFamily = getFontFamily(preset, bold, italic, semiBold);
+  return (
+    <SRText
+      color="backgroundContrast"
+      style={[$fontSizes[preset], {fontFamily}, style]}
+      {...rest}>
+      {children}
+    </SRText>
+  );
+};
