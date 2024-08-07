@@ -12,7 +12,7 @@ export function App(): React.JSX.Element {
         <Box backgroundColor="grayWhite" paddingTop="s20">
           <Text preset="headingMedium">Hello PORRA</Text>
           <Button title="Press me" marginBottom="s12" />
-          <Button preset="outline" title="Outline" marginBottom="s12" />
+          <Button loading preset="outline" title="Outline" marginBottom="s12" />
           <Button preset="secondary" title="Secondary" marginBottom="s12" />
         </Box>
       </SafeAreaView>

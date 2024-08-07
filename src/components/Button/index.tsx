@@ -1,7 +1,6 @@
 import React from 'react';
-import {ActivityIndicator} from 'react-native';
 
-import {Text} from '../../components';
+import {ActivityIndicator, Text} from '../../components';
 
 import {buttonPresets} from './button-presets';
 
@@ -26,7 +25,7 @@ export const Button = ({
       {...buttonPreset.container}
       {...rest}>
       {loading ? (
-        <ActivityIndicator />
+        <ActivityIndicator color={buttonPreset.content} />
       ) : (
         <Text preset="paragraphMedium" bold color={buttonPreset.content}>
           {title}
