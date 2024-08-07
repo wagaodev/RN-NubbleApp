@@ -14,7 +14,7 @@ export interface ButtonUI {
   content: ThemeColors;
 }
 
-export type ButtonPreset = 'primary' | 'outline' | 'secondary';
+export type ButtonPreset = 'primary' | 'outline';
 
 export type ButtonProps = BackgroundColorProps<Theme> &
   SpacingProps<Theme> &
@@ -25,4 +25,5 @@ export type ButtonProps = BackgroundColorProps<Theme> &
     title: string;
     loading?: boolean;
     preset?: ButtonPreset;
+    disabled?: boolean;
   };

@@ -11,11 +11,13 @@ export const Button = ({
   title,
   loading,
   preset = 'primary',
+  disabled = false,
   ...rest
 }: ButtonProps) => {
-  const buttonPreset = buttonPresets[preset];
+  const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default'];
   return (
     <S.Touchable
+      disabled={disabled || loading}
       title=""
       paddingHorizontal="s20"
       height={50}
