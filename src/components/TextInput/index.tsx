@@ -1,12 +1,14 @@
 import React, {useRef} from 'react';
 import * as S from './styles';
-import {TextInput as RNTextInput, TextInputProps} from 'react-native';
+import {TextInput as RNTextInput} from 'react-native';
+import {Props} from './types';
 
-interface Props extends TextInputProps {
-  label: string;
-}
-
-export const TextInput = ({label, ...rest}: Props) => {
+export const TextInput = ({
+  label,
+  errorMessage,
+  RightComponent,
+  ...rest
+}: Props) => {
   const inputRef = useRef<RNTextInput>(null);
   const focusInput = () => inputRef?.current?.focus();
 
@@ -14,9 +16,11 @@ export const TextInput = ({label, ...rest}: Props) => {
     <S.Press onPress={focusInput}>
       <S.Container>
         <S.Label>{label}</S.Label>
-        <S.ContainerTextInputArea>
+        <S.ContainerTextInputArea errorMessage={errorMessage}>
           <S.Input ref={inputRef} {...rest} />
+          {RightComponent && <S.IconButton>{RightComponent}</S.IconButton>}
         </S.ContainerTextInputArea>
+        <S.ErrorMessageLabel>{errorMessage}</S.ErrorMessageLabel>
       </S.Container>
     </S.Press>
   );

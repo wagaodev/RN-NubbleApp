@@ -1,5 +1,6 @@
 import React from 'react';
 import * as S from './styles';
+import {Icons} from '../../components';
 
 export const SignIn = () => {
   return (
@@ -9,8 +10,12 @@ export const SignIn = () => {
         Digite seu e-mail e senha para entrar.
       </S.DescriptionHeader>
       <S.Form>
-        <S.EmailInput label="Email" />
-        <S.PasswordInput label="Senha" />
+        <S.EmailInput label="Email" errorMessage="Ai zé da manga" />
+        <S.PasswordInput
+          label="Senha"
+          errorMessage="Moshi moshi"
+          RightComponent={<Icons name="eyeOn" color="gray2" />}
+        />
         <S.ForgotPassword>
           <S.ForgotPasswordText>Esqueci minha senha</S.ForgotPasswordText>
         </S.ForgotPassword>
