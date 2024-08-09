@@ -4,7 +4,6 @@ import {TouchableOpacity} from 'react-native';
 
 export const Container = styled(Box).attrs({
   flex: 1,
-  padding: 's20',
   backgroundColor: 'grayWhite',
 })``;
 export const Form = styled(Box).attrs({

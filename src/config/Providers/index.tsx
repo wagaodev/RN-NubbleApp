@@ -1,14 +1,32 @@
-import {ThemeProvider} from '@shopify/restyle';
-import React from 'react';
-import {SafeAreaView} from 'react-native';
-import {theme} from '../../theme';
+import React, { ReactNode } from 'react';
+import {
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from 'react-native-safe-area-context';
+import { ThemeProvider } from '@shopify/restyle';
+import { theme } from '../../theme';
+import { Box } from '../../components';
+
 interface Props {
-  children: React.ReactElement;
+  children: ReactNode;
 }
-export const Providers = ({children}: Props) => {
+
+export const Providers = ({ children }: Props) => {
+  return (
+    <SafeAreaProvider>
+      <InnerProviders>{children}</InnerProviders>
+    </SafeAreaProvider>
+  );
+};
+
+const InnerProviders = ({ children }: Props) => {
+  const { top } = useSafeAreaInsets();
+
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView style={{flex: 1}}>{children}</SafeAreaView>
+      <Box paddingHorizontal="s24" flex={1} style={{ paddingTop: top }}>
+        {children}
+      </Box>
     </ThemeProvider>
   );
 };
