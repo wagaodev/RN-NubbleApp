@@ -1,6 +1,6 @@
 import React from 'react';
 import * as S from './styles';
-import {Icons} from '../../components';
+import {Icons} from '../../../components';
 
 export const SignIn = () => {
   return (

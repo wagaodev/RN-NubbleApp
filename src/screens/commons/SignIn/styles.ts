@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {Box, Button, Text, TextInput} from '../../components';
+import {Box, Button, Text, TextInput} from '../../../components';
 import {TouchableOpacity} from 'react-native';
 
 export const Container = styled(Box).attrs({
